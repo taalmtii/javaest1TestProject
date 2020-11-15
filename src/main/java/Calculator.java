@@ -14,5 +14,16 @@ public class Calculator {
         return value > compareValue;
     }
 
+    public Integer division(Integer firstNumber, Integer secondNumber){
+        if(secondNumber == 0){
+            throw new ArithmeticException("divide by 0");
+        }
+        return firstNumber / secondNumber;
+    }
+
+    public Boolean isBiggerThanZero(Integer value){
+        return value > 0;
+    }
+
 
 }
