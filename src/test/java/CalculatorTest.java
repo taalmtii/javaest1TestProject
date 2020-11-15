@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.provider.*;
 
 import java.time.Month;
@@ -62,6 +63,15 @@ public class CalculatorTest {
         Integer days = month.length(false);
         assertTrue(days < 31);
    }
+
+   @ParameterizedTest
+    @ValueSource(strings = {"a", "b", "c"})
+    public void divisionParameterizedTest(@ConvertWith(Converter.class) Integer i){
+        assertEquals(1, calculator.division(i, 1));
+   }
+
+
+
 
 
 
